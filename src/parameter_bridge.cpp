@@ -320,7 +320,7 @@ int main(int argc, char * argv[])
     ros1_node.getParam(services_1_to_2_parameter_name, services_1_to_2) &&
     services_1_to_2.getType() == XmlRpc::XmlRpcValue::TypeArray)
   {
-    int service_execution_timeout{5};
+    int service_execution_timeout{10};
     ros1_node.getParamCached(
       service_execution_timeout_parameter_name, service_execution_timeout);
     for (size_t i = 0; i < static_cast<size_t>(services_1_to_2.size()); ++i) {
