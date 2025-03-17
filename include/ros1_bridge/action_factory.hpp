@@ -137,8 +137,8 @@ public:
       ROS2Goal goal2;
       translate_goal_1_to_2(*gh1_.getGoal(), goal2);
 
-      if (!client_->wait_for_action_server(std::chrono::seconds(1))) {
-        RCLCPP_INFO(this->logger_, "Action server not available after waiting");
+      if (!client_->wait_for_action_server(std::chrono::seconds(5))) {
+        RCLCPP_INFO(this->logger_, "Action server not available after waiting for 5 sec");
         gh1_.setRejected();
         return;
       }
